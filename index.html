@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz App</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    
+
     <div class="container">
 
         <div class="screen active" id="start-screen">
@@ -19,12 +21,33 @@
         <div class="screen" id="quiz-screen">
 
             <div class="quiz-header">
-                <h2 id="question-text">Question</h2>
+                <h2 id="question-text">Question goes here</h2>
+                <div class="quiz-info">
+                    <p>
+                        Question <span id="current-question">1</span> of <span>5</span>
+                    </p>
+                    <p>
+                        Score: <span id="score">0</span>
+                    </p>
+                </div>
             </div>
+            <div class="answers-container" id="answer-container">
+                <!-- answers will be inserted here from javascript-->
+            </div>
+            <div class="progress-bar">
+                <div class="progress" id="progress">
 
+                </div>
+            </div>
         </div>
-
-
+        <div id="result-screen" class="screen">
+            <h1>Quiz Results</h1>
+            <div class="result-info">
+                <p>You scored <span id="final-score">0</span> out of <span id="max-score"> 5</span></p>
+                <div id="result-message">Good job!</div>
+            </div>
+            <button id="restart-btn">Restart Quiz</button>
+        </div>
     </div>
 
 
@@ -32,4 +55,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
