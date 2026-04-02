@@ -53,3 +53,27 @@ body {
     margin-bottom: 1rem;
     line-height: 1.4;
 }
+
+.quiz-info{
+    display: flex;
+    justify-content: space-between;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.answers-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.answer-btn {
+    background-color: #f8f0e5;
+    color: #333;
+    border: 2px solid #eadbc8;
+    border-radius: 10px;
+    padding: 1rem;
+    cursor: pointer;
+    text-align: left;
+}
