@@ -95,6 +95,7 @@ function showQuestion() {
 
     questionText.textContent = currentQuestion.question;
 
+
     answersContainer.innerHTML = '';
 
     currentQuestion.answers.forEach(answer => {
@@ -111,10 +112,51 @@ function showQuestion() {
 }
 
 function selectAnswer(event) {
+    // optimization check
+    if (answersDisabled) return
 
-    
+    answersDisabled = true
 
+    const selectedButton = event.target;
+    const isCorrect = selectedButton.dataset.correct === 'true'
+
+    Array.from(answersContainer.children).forEach((button) => {
+        if (button.dataset.correct === 'true') {
+          button.classList.add('correct');  
+        } else {
+            button.classList.add('incorrect')
+        }
+    });
+
+    if (isCorrect) {
+        score++;
+        scoreSpan.textContent = score        
+    }
+
+    setTimeout(() => {
+        currentQuestionIndex++;
+
+        // check if there more questions or if quiz is over 
+        if (currentQuestionIndex < quizQuestions.length) {
+            
+        }
+        else {
+            showResults()
+        }
+    }, 1000)
 }
+
+    function showResults() {
+        quizScreen.classList.remove("active")
+        resultScreen.classList.add("active")
+
+        finalScoreSpan.textContent = score;
+        
+        const percentage = (score/quizQuestions.length) * 100
+        
+    }
+
+
 
 function restartQuiz() {
 
