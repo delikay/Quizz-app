@@ -1,9 +1,11 @@
+/* Reset default browser spacing so layout starts from a clean base */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Center the quiz card on the page and set the global font/background */
 body {
   background: #f5efe6;
   display: flex;
@@ -14,6 +16,7 @@ body {
   font-family: sans-serif;
 }
 
+/* Main app container styled like a floating card */
 .container {
   background-color: white;
   border-radius: 1rem;
@@ -24,18 +27,19 @@ body {
   position: relative;
 }
 
-/* screens */
+/* Every app view uses the same screen class and is hidden by default */
 .screen {
   display: none;
   padding: 2rem;
   text-align: center;
 }
 
+/* Only the active screen should be visible */
 .screen.active {
   display: block;
 }
 
-/* start screen  */
+/* Start screen heading */
 
 #start-screen h1 {
   color: #e86a33;
@@ -43,16 +47,19 @@ body {
   font-size: 2.5rem;
 }
 
+/* Introductory text below the heading */
 #start-screen p {
   color: #666;
   font-size: 1.1rem;
   margin-bottom: 30px;
 }
 
+/* Space below the question and score area */
 .quiz-header {
   margin-bottom: 2rem;
 }
 
+/* Main question text styling */
 #question-text {
   color: #333;
   font-size: 1.5rem;
@@ -60,6 +67,7 @@ body {
   line-height: 1.4;
 }
 
+/* Places question count and score on a single row */
 .quiz-info {
   display: flex;
   justify-content: space-between;
@@ -67,6 +75,7 @@ body {
   margin-bottom: 10px;
 }
 
+/* Stacks answer buttons vertically with consistent spacing */
 .answers-container {
   display: flex;
   flex-direction: column;
@@ -74,6 +83,7 @@ body {
   margin-bottom: 25px;
 }
 
+/* Base style for each answer choice */
 .answer-btn {
   background-color: #f8f0e5;
   color: #333;
@@ -85,24 +95,28 @@ body {
   transition: all 0.3s ease;
 }
 
+/* Hover feedback for answer buttons */
 .answer-btn:hover {
   background-color: #eadbc8;
   color: white;
   border-color: #dac0ae;
 }
 
+/* Highlight for the correct answer after selection */
 .answer-btn.correct {
   background-color: #e6fff0;
   color: #28a745;
   border-color: #a3f0c4;
 }
 
+/* Highlight for the wrong answer the user picked */
 .answer-btn.incorrect {
   background-color: #ffe6e6;
   color: #dc3545;
   border-color: #f0a3a3;
 }
 
+/* Progress bar track */
 .progress-bar {
   height: 10px;
   background-color: #e0e0e0;
@@ -111,6 +125,7 @@ body {
   margin-top: 20px;
 }
 
+/* Filled progress amount controlled by JavaScript */
 .progress {
   height: 100%;
   background-color: #e86a33;
@@ -118,13 +133,14 @@ body {
   transition: width 0.3s ease;
 }
 
-/* result screen */
+/* Result screen title */
 
 #result-screen h1 {
   color: #e86a33;
   margin-bottom: 30px;
 }
 
+/* Box that contains final score and result message */
 .result-info {
   background-color: #f8f0e5;
   border-radius: 10px;
@@ -132,18 +148,21 @@ body {
   margin-bottom: 30px;
 }
 
+/* Score summary text */
 .result-info p {
   color: #333;
   font-size: 1.2rem;
   margin-bottom: 1rem;
 }
 
+/* Performance message displayed after the quiz ends */
 #result-message {
   font-size: 1.5rem;
   font-weight: 600;
   color: #e86a33;
 }
 
+/* Shared button style for start, answers, and restart buttons */
 button {
   background-color: #e86a33;
   color: white;
@@ -154,10 +173,13 @@ button {
   font-size: 1.1rem;
   transition: background-color 0.3s ease;
 }
+
+/* Darker button color on hover for better feedback */
 button:hover {
   background-color: #d75a1e;
 }
 
+/* Smaller spacing and text sizing for narrow screens */
 @media (max-width: 500px) {
   .screen {
     padding: 1rem;

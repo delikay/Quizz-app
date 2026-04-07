@@ -2,57 +2,72 @@
 <html lang="en">
 
 <head>
+    <!-- Basic page metadata and responsive viewport settings -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz App</title>
+    <!-- Main stylesheet for the quiz layout and visual styling -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+    <!-- Main card that holds all quiz screens -->
     <div class="container">
 
+        <!-- First screen shown to the user before the quiz starts -->
         <div class="screen active" id="start-screen">
             <h1>Quiz Time!</h1>
             <p>Test your knowledge with these fun question</p>
+            <!-- Starts the quiz and switches to the question screen -->
             <button id="start-btn">Start Quiz</button>
         </div>
 
+        <!-- Quiz screen where questions, answers, and score are displayed -->
         <div class="screen" id="quiz-screen">
 
             <div class="quiz-header">
+                <!-- JavaScript replaces this placeholder with the active question -->
                 <h2 id="question-text">Question goes here</h2>
                 <div class="quiz-info">
                     <p>
+                        <!-- Current question position is updated as the user progresses -->
                         Question <span id="current-question">1</span> of <span id="total-questions">5</span>
                     </p>
                     <p>
+                        <!-- Live score increases when the user selects a correct answer -->
                         Score: <span id="score">0</span>
                     </p>
                 </div>
             </div>
+            <!-- Answer buttons are created here dynamically from JavaScript -->
             <div class="answers-container" id="answer-container">
-                <!-- answers will be inserted here from javascript-->
+                <!-- Answers are inserted here from JavaScript -->
             </div>
+            <!-- Visual progress indicator for quiz completion -->
             <div class="progress-bar">
+                <!-- JavaScript expands this bar as the user moves through the quiz -->
                 <div class="progress" id="progress">
 
                 </div>
             </div>
         </div>
+        <!-- Final screen that appears after the last question -->
         <div id="result-screen" class="screen">
             <h1>Quiz Results</h1>
             <div class="result-info">
+                <!-- Final score summary shown after the quiz ends -->
                 <p>You scored <span id="final-score">0</span> out of <span id="max-score"> 5</span></p>
+                <!-- Message changes based on how well the user performed -->
                 <div id="result-message">Good job!</div>
             </div>
+            <!-- Restarts the quiz from the first question -->
             <button id="restart-btn">Restart Quiz</button>
         </div>
     </div>
 
 
-
-
+    <!-- Quiz logic and screen switching behavior -->
     <script src="script.js"></script>
 </body>
 
